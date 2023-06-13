@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <link rel="icon" href="images/googleclassroom.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class = "left">
+                <button type = "button" id = "main-menu" class = "main-menu" title = "Main Menu" onclick="openside();"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button>
+                <img src="images/googlelogo.png" alt="Google Classroom Logo" class = "header-logo">
+                <span>Classroom</span>
+            </div>
+            <div class = "right">
+                <div class="dropdown">
+                    <button id = "plus" class="btn btn-secondary" title = "Create or join a class" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path></svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Join class</a></li>
+                      <li><a class="dropdown-item" href="#">Create class</a></li>
+                    </ul>
+                  </div>
+
+                  <div id = "profile-list" class="dropdown">
+                    <button id = "list" class="btn btn-secondary" title = "Google apps" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg class="gb_h" width="24" height="24" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                  <div id = "profile-list" class="dropdown">
+                    <button id = "profile" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <center><img src = "images/jonas2by2.png" alt = "Profile Picture"></center>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+    </header>
+    <div id = "sidebar" class = "sidebar">
+      <ul class = "for-profile">
+        <li id = "li-profile" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <img class = "profile-pic" src = "images/jonas2by2.png" alt = "Blank">
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>Jonas Isaiah P. Mulingbayan</p>
+              <small>jonasmulingbayan@gmail.com</small>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li id = "li-active"><a href = ""><svg style = "margin-right:20px;margin-top:-3px;" focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M12 3L4 9v12h16V9l-8-6zm6 16h-3v-6H9v6H6v-9l6-4.5 6 4.5v9z"></path></svg> Classes</a></li>
+        <li id = "li-inactive"><a href = ""><svg style = "margin-right:20px;margin-top:-3px;" focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg> Calendar</a></li>
+      </ul>
+
+      <ul>
+        <li id = "enrolled"><span>Enrolled</span></li>
+        <li id = "li-inactive"><a href = "" ><svg style = "margin-right:20px;margin-top:-3px;" enable-background="new 0 0 24 24" focusable="false" height="24" viewBox="0 0 24 24" width="24" class=" NMm5M"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M20,3H4C2.9,3,2,3.9,2,5v14c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V5 C22,3.9,21.1,3,20,3z M20,19H4V5h16V19z" fill-rule="evenodd"></path><polygon fill-rule="evenodd" points="19.41,10.42 17.99,9 14.82,12.17 13.41,10.75 12,12.16 14.82,15"></polygon><rect fill-rule="evenodd" height="2" width="5" x="5" y="7"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="11"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="15"></rect></g></g></svg> To-do</a></li>
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "first-sub">I</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>ITEC 101 - Human Computer I...</p>
+              <small>BSIT 4-2 / 5:00-6:00 PM / Saturday / ...</small>
+            </div>
+          </a>
+        </li>
+
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "second-sub">B</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>BSIT</p>
+              <small>4 - 2</small>
+            </div>
+          </a>
+        </li>
+        
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "first-sub">I</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>ITEC 106 - 2nd Semester SY 2...</p>
+              <small>BSIT 4-2</small>
+            </div>
+          </a>
+        </li>
+
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "second-sub">I</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>Integrated Programming and ...</p>
+              <small>BSIT 2-4</small>
+            </div>
+          </a>
+        </li>
+
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "third-sub">I</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>ITEC 106</p>
+              <small>IT 3-2</small>
+            </div>
+          </a>
+        </li>
+        
+        <li id = "li-inactive" class = "inactive">
+          <a class = "subjects-a" href = "">
+            <div class = "sidebar-subjects-left">
+              <p class = "first-sub">S</p>
+            </div>
+            <div class = "sidebar-subjects-right">
+              <p>STAT 2 NEW</p>
+              <small>IT 2-4</small>
+            </div>
+          </a>
+        </li>
+      </ul>
+      
+      <ul class = "last-ul">
+        <li id = "li-inactive"><a href = ""><svg style = "margin-right:20px;margin-top:-3px;" focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.83 1H5.42l.82-1zM5 19V8h14v11H5zm11-5.5l-4 4-4-4 1.41-1.41L11 13.67V10h2v3.67l1.59-1.59L16 13.5z"></path></svg> Archived classes</a></li>
+        <li id = "li-inactive"><a href = ""><svg style = "margin-right:20px;margin-top:-3px;" focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"></path><circle cx="12" cy="12" r="3.5"></circle></svg> Settings</a></li>
+      </ul>
+    </div>
+    <div class = "sub-navbar">
+        <button type = "button"><svg style = "margin-top:-3px;margin-right:2px;" enable-background="new 0 0 24 24" focusable="false" height="18" viewBox="0 0 24 24" width="18" class=" NMm5M"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M20,3H4C2.9,3,2,3.9,2,5v14c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V5 C22,3.9,21.1,3,20,3z M20,19H4V5h16V19z" fill-rule="evenodd"></path><polygon fill-rule="evenodd" points="19.41,10.42 17.99,9 14.82,12.17 13.41,10.75 12,12.16 14.82,15"></polygon><rect fill-rule="evenodd" height="2" width="5" x="5" y="7"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="11"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="15"></rect></g></g></svg> To-do</button>
+        <button type = "button"><svg style = "margin-top:-3px;margin-right:2px;" focusable="false" width="18" height="18" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg> Calendar</button>
+    </div>
+    <div class = "sub-navbar-icon">
+      <button type = "button"><svg enable-background="new 0 0 24 24" focusable="false" height="24" viewBox="0 0 24 24" width="24" class=" NMm5M"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M20,3H4C2.9,3,2,3.9,2,5v14c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V5 C22,3.9,21.1,3,20,3z M20,19H4V5h16V19z" fill-rule="evenodd"></path><polygon fill-rule="evenodd" points="19.41,10.42 17.99,9 14.82,12.17 13.41,10.75 12,12.16 14.82,15"></polygon><rect fill-rule="evenodd" height="2" width="5" x="5" y="7"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="11"></rect><rect fill-rule="evenodd" height="2" width="5" x="5" y="15"></rect></g></g></svg></button>
+      <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path></svg></button>
+  </div>
+    <div class = "main-content">
+    <div class = "content">
+      <div class="content-body" style="background-image: url(&quot;https://gstatic.com/classroom/themes/img_code.jpg&quot;);">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+        <p class = "subject">ITEC 101 - Human Co...</p>
+        <span>BSIT 4-2 / 5:00-6:00 PM / Saturday / R....</span>
+      </a>
+        <p class = "prof">Aris Ignacio</p>
+      
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>        </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+
+    <div class = "content">
+      <div class="content-body"  style="background-image: url(&quot;https://gstatic.com/classroom/themes/img_backtoschool.jpg&quot;);"">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+          <p class = "subject">BSIT</p>
+          <span>4 - 2</span>
+        </a>
+          <p class = "prof">Ryan Rosaldo</p>
+        
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+
+   <div class = "content">
+      <div class="content-body" style="background-image: url(&quot;https://gstatic.com/classroom/themes/img_breakfast.jpg&quot;);">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+          <p class = "subject">ITEC 106 - 2nd Seme...</p>
+          <span>BSIT 4-2</span>
+        </a>
+          <p class = "prof">Roi Francisco (RoRoi)</p>
+        
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+
+
+    <div class = "content">
+      <div class="content-body" style="background-image: url(&quot;https://gstatic.com/classroom/themes/img_code.jpg&quot;);">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+          <p class = "subject">Integrated Program...</p>
+          <span>BSIT 2-4</span>
+        </a>
+          <p class = "prof">Marie Cherie Ochea</p>
+     
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+
+
+    <div class = "content">
+      <div class="content-body" style="background-color: rgb(0,123,131);">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+          <p class = "subject">ITEC 106</p>
+          <span>IT 3-2</span>
+        </a>
+          <p class = "prof">Ryan Paul Roy</p>
+        
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+
+    <div class = "content">
+      <div class="content-body" style="background-image: url(&quot;https://gstatic.com/classroom/themes/img_breakfast.jpg&quot;);">
+      <div class = "for-subject">
+        <a class = "subjects" href = "#">
+          <p class = "subject">STAT 2 NEW</p>
+          <span>IT 2-4</span>
+        </a>
+          <p class = "prof">Analissa Torres</p>
+      
+      </div>
+      <div>
+        <div class="dropdown">
+          <button id = "menu" class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Move</a></li>
+            <li><a class="dropdown-item" href="#">Unenroll</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src = "https://lh3.googleusercontent.com/a/default-user=s75-c" alt = "Blank">
+
+      </div>
+      <div id = "content-blank" class = "content-blank"></div>
+      <div class = "content-footer">
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg></button>
+        <button type = "button"><svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path></svg></button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <button type = "button" class = "help"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path></svg></button>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<script>
+
+
+let main_menu = document.querySelector(".main-menu");
+let sidebar = document.querySelector(".sidebar");
+
+main_menu.onclick = function(){
+  sidebar.classList.toggle("active");
+}
+document.onclick = function(e){
+  if(!main_menu.contains(e.target) && !sidebar.contains(e.target)){
+    sidebar.classList.remove("active");
+  }
+}
+
+
+</script>
