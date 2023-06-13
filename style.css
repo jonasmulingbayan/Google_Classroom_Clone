@@ -178,6 +178,7 @@ nav .header-logo{
 }
 .sub-navbar-icon{
     padding:15px 25px;
+    display: none;
 }
 .sub-navbar-icon button{
     border-radius: 50%;
@@ -198,6 +199,9 @@ nav .header-logo{
 @media(max-width:500px) {
     .sub-navbar{
         display:none;
+    }
+    .sub-navbar-icon{
+        display: block;
     }
 }
 .main-content{
